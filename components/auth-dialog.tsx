@@ -1,8 +1,9 @@
 import { AuthViewType } from "@/lib/auth";
 import { SupabaseClient } from "@supabase/supabase-js";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "./ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import AuthForm from "./auth-fotm";
+
 
 export function AuthDialog({
     open,
@@ -19,10 +20,10 @@ export function AuthDialog({
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogContent>
                 <VisuallyHidden>
-                    <DialogTitle>Sign into CodeCapsule</DialogTitle>
+                    <DialogTitle>Sign in to CodeCapsule</DialogTitle>
                 </VisuallyHidden>
                 <AuthForm supabase={supabase} view={view} />
             </DialogContent>
         </Dialog>
-    )
+    );
 }
